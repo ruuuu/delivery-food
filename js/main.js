@@ -25,7 +25,7 @@ function ToggleModal(){
 }
 
 
-new.WOW().init();
+//new.WOW().init();
 
 
 
