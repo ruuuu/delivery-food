@@ -94,6 +94,7 @@ a{
 
 .button {
     /*флекс элемент, котрый сам флекс контейнер*/
+    min-height: 40px; /*для препонения тектсом чобы тектс не выпадал из кнопки*/
     display: flex;
     align-items: center;
     padding: 8px 16px;
@@ -128,6 +129,23 @@ a{
 }
 
 
+.button-cart {
+    display: none;
+    margin: 0 5px;
+}
+
+.button-out {
+    display: none;
+    margin: 0 5px;
+}
+
+
+.user-name {
+    display: none;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
 
 
 .main {
@@ -223,6 +241,9 @@ a{
 
 
 .card-text {
+    display: flex;
+    flex-direction: column;
+    min-height: 275px;
     padding-top: 20px;
     padding-left: 23px;
     padding-right: 23px;
@@ -280,8 +301,8 @@ a{
 .card-buttons{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    margin-top: 24px;
+    align-items: flex-end;/*в конце попеерчной оси*/
+    margin-top: auto;/*флекс элемент прижмется к низу контйнера*/
 }
 
 .card-price-bold{
@@ -340,10 +361,10 @@ a{
 
 
 .ingredients{
-    max-height: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;/*многтточит, если нектс не вмещается в контенйер*/
-    white-space: nowrap;/*запрещаем перенос строки*/
+    min-height: 40px;/*чтобы пеерплнение было*/
+    /*overflow: hidden;*/
+    /*text-overflow: /ellipsis;многтточит, если нектс не вмещается в контенйер
+    white-space: nowrap;запрещаем перенос строки*/
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -413,9 +434,23 @@ a{
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+
+.modal-auth {/*мод окно авторизации*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 999;
+}
+
+
 .is-open{/*этот класс будем подключать когда надо окно окрыть*/
     display: flex;
 }
+
 
 .modal-dialog{/*флекс элемт*/
     margin: auto;/*чтобф центровалсь окно при прокрутке*/
@@ -425,6 +460,24 @@ a{
 
     background-color: #FFFFFF;
     border-radius: 5px;
+}
+
+
+.modal-dialog-auth {
+    width: auto;
+    position: relative;
+}
+
+
+.label-auth {
+    display: block;
+    margin: 30px;
+}
+
+
+.label-auth span {
+    width: 80px;
+    display: inline-block;
 }
 
 
@@ -451,6 +504,14 @@ a{
     border: none;
 }
 
+.close-auth {
+    font-size: 36px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
 
 .modal-body{
     margin-bottom: 45px;
@@ -491,6 +552,12 @@ a{
     display: flex;
     align-items: center;
 }
+
+
+.modal-auth .modal-footer {
+    justify-content: flex-end;
+}
+
 
 .counter-button{
     width: 39px;
